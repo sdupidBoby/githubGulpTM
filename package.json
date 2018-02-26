@@ -1,0 +1,29 @@
+{
+  "name": "gulppc",
+  "version": "1.0.0",
+  "description": "pcprogram",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ys",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-rev": "^8.1.1",
+    "gulp-rev-collector": "^1.2.4",
+    "gulp-stylus": "^2.7.0",
+    "gulp-uglify": "^3.0.0",
+    "imagemin-pngquant": "^5.0.1",
+    "run-sequence": "^2.2.1",
+    "vinyl-paths": "^2.1.0"
+  }
+}
