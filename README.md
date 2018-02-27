@@ -26,3 +26,5 @@
 3.终端执行 gulp watcher ,启动项目
 
 4.在dist目录下开发
+
+[detail!](https://www.jianshu.com/p/fe865297c575)
