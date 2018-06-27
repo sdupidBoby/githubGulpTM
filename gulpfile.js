@@ -7,6 +7,8 @@ var autoprefixer = require('gulp-autoprefixer');// css前缀
 var uglify = require('gulp-uglify');    //压缩JS
 var htmlmin = require('gulp-htmlmin'); //压缩html
 
+var fileinclude = require('gulp-file-include'); // 合并html
+
 var rev = require('gulp-rev');	                   // 给文件加入版本号
 var revCollector = require('gulp-rev-collector'); // 替换html中的文件名
 var concat = require('gulp-concat');             // 合并
@@ -40,7 +42,6 @@ const DIST_JS_ALL = DIST_JS + '/**/*'
 const DIST_CSS_ALL = DIST_CSS + '/**/*'
 const DIST_IMG_ALL = DIST_IMG + '/**/*'
 const DIST_HTML_ALL = DIST + '*.html'
-
 
 // ======================================================css
 gulp.task('compile-stylus', function() {
@@ -81,6 +82,11 @@ gulp.task('html-optimize', function(cb) {
         minifyCSS: true //压缩页面CSS
       };
     return  gulp.src(SRC_HTML_ALL)
+            .pipe(fileinclude({
+                prefix: '@@',   //变量前缀 @@include
+                basepath: '@file',//引用文件路径
+                indent:true//保留文件的缩进
+            }))
             .pipe(htmlmin(options))
             .pipe(gulp.dest(DIST));
 });
